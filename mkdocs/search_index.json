@@ -1,0 +1,14 @@
+{
+    "docs": [
+        {
+            "location": "/",
+            "text": "Team Waterloop\n\n\nCanada's Hyperloop, designed and built at the University of Waterloo.",
+            "title": "Home"
+        },
+        {
+            "location": "/#team-waterloop",
+            "text": "Canada's Hyperloop, designed and built at the University of Waterloo.",
+            "title": "Team Waterloop"
+        }
+    ]
+}
