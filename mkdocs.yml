@@ -1,0 +1,4 @@
+site_name: Team Waterloop
+theme: cinder
+pages:
+- Home: index.md
