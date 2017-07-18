@@ -1,4 +1,5 @@
-language: shell
+language: python
+install: pip install mkdocs mkdocs-cinder
 script: mkdocs build
 deploy:
   provider: pages
