@@ -1,0 +1,10 @@
+language: shell
+script: mkdocs build
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token:
+    secure: C8aBrifpoZfTTwDHufYClBJVooGz6XSUYfiR/G5NICOV3LeFVjlK4zSQ/z9uNE0GtUZuzIHGFwCA7+jSMR2+anp6gjoXR4NZ8K8jZeXDPkRi+HOhFN+yhTRfdxakgUOhJV3kDgyEMnmBc8VA9Z7IMQYMm7de/OTYm/4RY5zHliN3lZECASOH+UYa7OM+OkyCQ3077LUDf0llcG+0KmSpucsKrEbpN03qVEdh3WKAcI5Z3OsMRT5U2KujFOes48+BTc2LEPS7CJdzScX67uQV8lZfLymEWaHpWxpv7yF0DVQwetV8gLjMSPmFbjL2CEIQ6p6QVkOPFikUhlZ3ooAR1VHSSM9Fy940pBROkdwKqqCuspdoyBhePmM+YKZ6LjGZj81bbou6dO8dcs3j1Rij2BXA+Dzm1zKq+eM2Zch7NdixnpCQMnlaSGBRUhBEchSfPwzi2vUED4hp4mmwCZy/7EDhiTxdHGBLMUK4n7wcVEFfEfUCELFpO71C54PtBCv4OYYFkFgG2Zhox6sNXwXJqqK2FfR07n+im7BuSq9S2htUNt6Dvyrf/qon0Yq8znKFkYPECDrjPKxIs2627p42NNBPt70qzgyB9DI+IoNzY7NpVoSSWYLn0njyUhIFuJxZkTqvV+AyUBjDmVss8FvnLPPvQT5vz4bwJlJYvpfdnxE=
+  on:
+    branch: master
+  local_dir: site
