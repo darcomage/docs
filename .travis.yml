@@ -12,7 +12,7 @@ after_success:
 - git fetch origin
 - git reset --soft origin/gh-pages
 - git add -A
-- git commit -m 'Deploy '${HASH:0:6}' with MkDocs '${VERSION:16}
+- git commit -m 'Deploy '${HASH:0:7}' with MkDocs '${VERSION:16}
 - git push -f origin master:gh-pages
 env:
   global:
