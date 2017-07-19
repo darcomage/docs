@@ -5,18 +5,18 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">   
-    <link rel="shortcut icon" href="./img/favicon.ico">
+    <link rel="shortcut icon" href="../img/favicon.ico">
 
-    <title>Team Waterloop</title>
+    <title>Software Systems - Team Waterloop</title>
 
-    <link href="./css/bootstrap-custom.min.css" rel="stylesheet">
+    <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="//cdn.jsdelivr.net/font-hack/2.018/css/hack.min.css">
     <link href='//fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
     <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
-    <link href="./css/base.css" rel="stylesheet">
-    <link href="./css/cinder.css" rel="stylesheet">
-    <link rel="stylesheet" href="./css/highlight.css">
+    <link href="../css/base.css" rel="stylesheet">
+    <link href="../css/cinder.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/highlight.css">
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -36,7 +36,7 @@
     
 </head>
 
-<body class="homepage" >
+<body>
 
     <div class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container">
@@ -54,7 +54,7 @@
             
 
             <!-- Main title -->
-            <a class="navbar-brand" href=".">Team Waterloop</a>
+            <a class="navbar-brand" href="..">Team Waterloop</a>
         </div>
 
         <!-- Expanded navigation -->
@@ -64,14 +64,14 @@
                 <ul class="nav navbar-nav">
                 
                 
-                    <li class="active">
-                        <a href=".">Home</a>
+                    <li >
+                        <a href="..">Home</a>
                     </li>
                 
                 
                 
-                    <li >
-                        <a href="software-systems/">Software Systems</a>
+                    <li class="active">
+                        <a href="./">Software Systems</a>
                     </li>
                 
                 
@@ -85,13 +85,13 @@
                     </a>
                 </li>
                 
-                    <li class="disabled">
-                        <a rel="next" >
+                    <li >
+                        <a rel="next" href="..">
                             <i class="fa fa-arrow-left"></i> Previous
                         </a>
                     </li>
-                    <li >
-                        <a rel="prev" href="software-systems/">
+                    <li class="disabled">
+                        <a rel="prev" >
                             Next <i class="fa fa-arrow-right"></i>
                         </a>
                     </li>
@@ -107,12 +107,9 @@
         <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="first-level active"><a href="#team-waterloop">Team Waterloop</a></li>
+        <li class="first-level active"><a href="#software-systems">Software Systems</a></li>
         
-            <li class="second-level"><a href="#how-to-contribute">How to contribute</a></li>
-            
-        
-            <li class="second-level"><a href="#building-locally">Building locally</a></li>
+            <li class="second-level"><a href="#comms-interfaces">Comms Interfaces</a></li>
             
         
     
@@ -120,28 +117,20 @@
 </div></div>
         <div class="col-md-9" role="main">
 
-<h1 id="team-waterloop">Team Waterloop</h1>
-<p>Canada's Hyperloop, designed and built at the University of Waterloo.
-This is the documentation hub for all components of our pod.</p>
-<p>This site is not intended for sharing outside of the team.</p>
-<h2 id="how-to-contribute">How to contribute</h2>
+<h1 id="software-systems">Software Systems</h1>
+<p>Our <a href="https://docs.google.com/document/d/1ZqDp1sfxVkDEsVfQ0Fsqpa6n7totzh_2IA4IrXp5i_4/edit">Superdoc</a> 
+is currently our main source of information; that will slowly be migrated here.</p>
+<h2 id="comms-interfaces">Comms Interfaces</h2>
 <ul>
-<li><code>git clone https://github.com/teamwaterloop/docs</code></li>
-<li>Edit the relevant files in the <code>docs</code> folder.</li>
-<li><code>git commit -m "&lt;a brief descriptive message about what you added&gt;"</code></li>
-<li><code>git push origin master</code></li>
-</ul>
-<p>After pushing, the updated documentation will be compiled and deployed to 
-<a href="https://docs.teamwaterloop.ca">docs.teamwaterloop.ca</a> within a couple of minutes.</p>
-<h2 id="building-locally">Building locally</h2>
-<p>To build locally, you need to first install Python, then do the following:</p>
-<ul>
-<li><code>pip install mkdocs mkdocs-cinder</code></li>
-<li><code>mkdocs build</code></li>
-<li><code>cd site</code></li>
-<li>If Python 3: <code>python -m http.server 4000</code></li>
-<li>If Python 2: <code>python -m SimpleHTTPServer 4000</code></li>
-<li>And then navigate to <code>localhost:4000</code> to see your work!</li>
+<li>
+<p>Arduino-Electrical interface: <a href="https://docs.google.com/spreadsheets/d/18PZNkgs89I_vvb521Zw7m2bll4Fvnhqy8EalrwVd7fA/edit#gid=1787642201">Pinout</a></p>
+</li>
+<li>
+<p>Raspberry Pi-Arduino interface: <a href="http://htmlpreview.github.io/?https://github.com/teamwaterloop/communication-system/blob/master/communication_format.html">Serial Comms Spec</a></p>
+</li>
+<li>
+<p>Dashboard-Raspberry Pi interface: WebSocket Comms Spec???</p>
+</li>
 </ul></div>
         
     </div>
@@ -152,15 +141,15 @@ This is the documentation hub for all components of our pod.</p>
         <small>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p></small>
     </footer>
 
-    <script src="./js/jquery-1.10.2.min.js"></script>
-    <script src="./js/bootstrap-3.0.3.min.js"></script>
-    <script src="./js/highlight.pack.js"></script>
+    <script src="../js/jquery-1.10.2.min.js"></script>
+    <script src="../js/bootstrap-3.0.3.min.js"></script>
+    <script src="../js/highlight.pack.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
     <script>
-    var base_url = '.';
+    var base_url = '..';
     </script>
-    <script data-main="./mkdocs/js/search.js" src="./mkdocs/js/require.js"></script>
-    <script src="./js/base.js"></script>
+    <script data-main="../mkdocs/js/search.js" src="../mkdocs/js/require.js"></script>
+    <script src="../js/base.js"></script>
 
     <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
         <div class="modal-dialog">
@@ -192,8 +181,3 @@ This is the documentation hub for all components of our pod.</p>
     </body>
 
 </html>
-
-<!--
-MkDocs version : 0.16.3
-Build Date UTC : 2017-07-19 00:48:01
--->

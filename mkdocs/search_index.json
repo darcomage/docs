@@ -1,14 +1,39 @@
 {
     "docs": [
         {
-            "location": "/",
-            "text": "Team Waterloop\n\n\nCanada's Hyperloop, designed and built at the University of Waterloo.",
+            "location": "/", 
+            "text": "Team Waterloop\n\n\nCanada's Hyperloop, designed and built at the University of Waterloo.\nThis is the documentation hub for all components of our pod.\n\n\nThis site is not intended for sharing outside of the team.\n\n\nHow to contribute\n\n\n\n\ngit clone https://github.com/teamwaterloop/docs\n\n\nEdit the relevant files in the \ndocs\n folder.\n\n\ngit commit -m \"\na brief descriptive message about what you added\n\"\n\n\ngit push origin master\n\n\n\n\nAfter pushing, the updated documentation will be compiled and deployed to \n\ndocs.teamwaterloop.ca\n within a couple of minutes.\n\n\nBuilding locally\n\n\nTo build locally, you need to first install Python, then do the following:\n\n\n\n\npip install mkdocs mkdocs-cinder\n\n\nmkdocs build\n\n\ncd site\n\n\nIf Python 3: \npython -m http.server 4000\n\n\nIf Python 2: \npython -m SimpleHTTPServer 4000\n\n\nAnd then navigate to \nlocalhost:4000\n to see your work!", 
             "title": "Home"
-        },
+        }, 
         {
-            "location": "/#team-waterloop",
-            "text": "Canada's Hyperloop, designed and built at the University of Waterloo.",
+            "location": "/#team-waterloop", 
+            "text": "Canada's Hyperloop, designed and built at the University of Waterloo.\nThis is the documentation hub for all components of our pod.  This site is not intended for sharing outside of the team.", 
             "title": "Team Waterloop"
+        }, 
+        {
+            "location": "/#how-to-contribute", 
+            "text": "git clone https://github.com/teamwaterloop/docs  Edit the relevant files in the  docs  folder.  git commit -m \" a brief descriptive message about what you added \"  git push origin master   After pushing, the updated documentation will be compiled and deployed to  docs.teamwaterloop.ca  within a couple of minutes.", 
+            "title": "How to contribute"
+        }, 
+        {
+            "location": "/#building-locally", 
+            "text": "To build locally, you need to first install Python, then do the following:   pip install mkdocs mkdocs-cinder  mkdocs build  cd site  If Python 3:  python -m http.server 4000  If Python 2:  python -m SimpleHTTPServer 4000  And then navigate to  localhost:4000  to see your work!", 
+            "title": "Building locally"
+        }, 
+        {
+            "location": "/software-systems/", 
+            "text": "Software Systems\n\n\nOur \nSuperdoc\n \nis currently our main source of information; that will slowly be migrated here.\n\n\nComms Interfaces\n\n\n\n\n\n\nArduino-Electrical interface: \nPinout\n\n\n\n\n\n\nRaspberry Pi-Arduino interface: \nSerial Comms Spec\n\n\n\n\n\n\nDashboard-Raspberry Pi interface: WebSocket Comms Spec???", 
+            "title": "Software Systems"
+        }, 
+        {
+            "location": "/software-systems/#software-systems", 
+            "text": "Our  Superdoc  \nis currently our main source of information; that will slowly be migrated here.", 
+            "title": "Software Systems"
+        }, 
+        {
+            "location": "/software-systems/#comms-interfaces", 
+            "text": "Arduino-Electrical interface:  Pinout    Raspberry Pi-Arduino interface:  Serial Comms Spec    Dashboard-Raspberry Pi interface: WebSocket Comms Spec???", 
+            "title": "Comms Interfaces"
         }
     ]
 }
