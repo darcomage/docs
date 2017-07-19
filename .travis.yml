@@ -2,13 +2,17 @@ language: python
 install: pip install mkdocs mkdocs-cinder
 script: mkdocs build
 after_success:
+- HASH=$(git rev-parse HEAD)
+- VERSION=$(mkdocs --version)
 - cd site
 - git init
 - git config user.name 'Clive Chan'
 - git config user.email 'cc@clive.io'
-- git remote add origin 'https://${github_token}@github.com/teamwaterloop/docs'
+- git remote add origin 'https://'${github_token}'@github.com/teamwaterloop/docs'
+- git fetch origin
+- git reset --soft origin/gh-pages
 - git add -A
-- git commit -m 'Deploy Waterloop MkDocs build to gh-pages'
+- git commit -m 'Deploy '${HASH:0:6}' with MkDocs '${VERSION:16}
 - git push -f origin master:gh-pages
 env:
   global:
