@@ -112,6 +112,9 @@
             <li class="second-level"><a href="#comms-interfaces">Comms Interfaces</a></li>
             
         
+            <li class="second-level"><a href="#raspberry-pi-setup-tutorial-and-configurations">Raspberry Pi setup tutorial and configurations</a></li>
+            
+        
     
     </ul>
 </div></div>
@@ -131,7 +134,67 @@ is currently our main source of information; that will slowly be migrated here.<
 <li>
 <p>Dashboard-Raspberry Pi interface: WebSocket Comms Spec???</p>
 </li>
-</ul></div>
+</ul>
+<h2 id="raspberry-pi-setup-tutorial-and-configurations">Raspberry Pi setup tutorial and configurations</h2>
+<blockquote>
+<p>Initial Note: We are using a RPI3, so we have wifi module built in. If you are using and older RPI, then you might have to adjust certain things like the name of your wireless device</p>
+</blockquote>
+<ol>
+<li><a href="https://www.raspberrypi.org/documentation/installation/installing-images/">Flush an OS on your RPI</a>. We are using raspbian os because it has GUI, which could be helpful when resolving problems in networking</li>
+<li><a href="https://www.raspberrypi.org/documentation/remote-access/ssh/">Enable SSH on RPI</a></li>
+<li>Node should come pre-installed, you can check if it is installed by running <code>node -v</code> any version above 4.2 should be suitable</li>
+<li>If your version is below 4.2, then you should update node </li>
+</ol>
+<pre><code>sudo npm cache clean -f 
+sudo npm install -g n 
+sudo n stable
+</code></pre>
+
+<ol>
+<li>Make sure you have npm installed <code>npm -v</code></li>
+<li>Install pm2 <code>sudo npm install -g pm2</code></li>
+<li>Configure pm2 to start <code>server.js</code> on boot</li>
+</ol>
+<pre><code>&gt; pm2 startup systemd
+Output
+[PM2] Init System found: systemd
+[PM2] You have to run this command as root. Execute the following command:
+sudo env PATH=$PATH:/usr/bin /usr/lib/node_modules/pm2/bin/pm2 startup systemd -u sammy --hp /home/sammy
+</code></pre>
+
+<ul>
+<li>You have to run the command as directed in the output</li>
+<li>Run server with PM2 </li>
+</ul>
+<pre><code>pm2 start server.js
+pm2 save
+</code></pre>
+
+<blockquote>
+<p>Now server will start on boot you can check logs from the server <code>pm2 logs</code></p>
+</blockquote>
+<ol>
+<li>Set static ip on rpi:</li>
+<li>Configure <code>sudo nano /etc/dhcpcd.conf</code></li>
+<li>At the very bottom of the file, add the following lines:</li>
+</ol>
+<pre><code>interface wlan0
+
+static ip_address=192.168.0.200/24
+static routers=192.168.0.1
+static domain_name_servers=192.168.0.1
+</code></pre>
+
+<ul>
+<li>Reboot <code>sudo reboot</code> and check that it worked <code>ifconfig</code> under wlan0 interface you should see your specified IP address</li>
+</ul>
+<pre><code> wlan0     Link encap:Ethernet  HWaddr 00:0F:20:CF:8B:42
+           inet addr:192.168.0.1  Bcast:217.149.127.63  Mask:255.255.255.192
+           UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+           RX packets:2472694671 errors:1 dropped:0 overruns:0 frame:0
+           TX packets:44641779 errors:0 dropped:0 overruns:0 carrier:0
+           collisions:0 txqueuelen:1000
+</code></pre></div>
         
     </div>
 
