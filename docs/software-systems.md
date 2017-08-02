@@ -13,19 +13,19 @@ is currently our main source of information; that will slowly be migrated here.
 
 ## Raspberry Pi setup tutorial and configurations
 
-> Initial Note: We are using a RPI3, so we have wifi module built in. If you are using and older RPI, then you might have to adjust certain things like the name of your wireless device
+> Initial Note: We are using a RPi3, so we have wifi module built in. If you are using an older RPi, then you might have to adjust certain things like the name of your wireless device.
 
-1. [Flush an OS on your RPI](https://www.raspberrypi.org/documentation/installation/installing-images/). We are using raspbian os because it has GUI, which could be helpful when resolving problems in networking
-2. [Enable SSH on RPI](https://www.raspberrypi.org/documentation/remote-access/ssh/)
+1. [Flash an OS onto your RPi](https://www.raspberrypi.org/documentation/installation/installing-images/). We are using Raspbian OS because it's the most well-supported RPi OS, and it has a GUI which could be helpful when resolving problems in networking.
+2. [Enable SSH on RPi](https://www.raspberrypi.org/documentation/remote-access/ssh/)
 3. Node should come pre-installed, you can check if it is installed by running `node -v` any version above 4.2 should be suitable
-* If your version is below 4.2, then you should update node 
+* If your version is below 4.2, then you should update node:
 ```
-sudo npm cache clean -f 
-sudo npm install -g n 
+sudo npm cache clean -f
+sudo npm install -g n
 sudo n stable
 ```
-4. Make sure you have npm installed `npm -v`
-5. Install pm2 `sudo npm install -g pm2`
+4. Make sure you have npm installed properly by observing the output of `npm -v`.
+5. Install the `pm2` process manager globally. `sudo npm install -g pm2`
 - Configure pm2 to start `server.js` on boot
 ```
 > pm2 startup systemd
@@ -40,10 +40,10 @@ sudo env PATH=$PATH:/usr/bin /usr/lib/node_modules/pm2/bin/pm2 startup systemd -
 pm2 start server.js
 pm2 save
 ```
-> Now server will start on boot you can check logs from the server `pm2 logs`
-    
-6. Set static ip on rpi:
-- Configure `sudo nano /etc/dhcpcd.conf`
+- Now the server will start on boot, and logs can be retrieved via `pm2 logs`.
+
+6. Set a static ip on the RPi:
+- Configure DHCPD: `sudo nano /etc/dhcpcd.conf`
 - At the very bottom of the file, add the following lines:
 ```
 interface wlan0
@@ -52,7 +52,7 @@ static ip_address=192.168.0.200/24
 static routers=192.168.0.1
 static domain_name_servers=192.168.0.1
 ```
-- Reboot `sudo reboot` and check that it worked `ifconfig` under wlan0 interface you should see your specified IP address
+- Reboot `sudo reboot` and check that it worked `ifconfig` under wlan0 interface you should see your specified IP address.
 ```
  wlan0     Link encap:Ethernet  HWaddr 00:0F:20:CF:8B:42
            inet addr:192.168.0.1  Bcast:217.149.127.63  Mask:255.255.255.192
@@ -60,5 +60,6 @@ static domain_name_servers=192.168.0.1
            RX packets:2472694671 errors:1 dropped:0 overruns:0 frame:0
            TX packets:44641779 errors:0 dropped:0 overruns:0 carrier:0
            collisions:0 txqueuelen:1000
-```   
-    
+```
+- *NOTE:* Wifi is being used for convenience. For competition, we need to use interface `eth0`, since RPi will be connected to the SpaceX NAP.
+SpaceX allows us to use 192.168.0.6-254 inclusive. Gateway is 192.168.0.1. DHCP and DNS are not available.
