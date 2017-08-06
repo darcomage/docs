@@ -195,7 +195,12 @@ SpaceX allows us to use <code>192.168.0.6-254</code> inclusive. Gateway is <code
 <li>
 <p>NodeJS should come pre-installed, but Raspbian's built-in version is very old.</p>
 <ul>
-<li>Make sure you have node and npm installed properly by observing the output of <code>node -v</code> and <code>npm -v</code>.</li>
+<li>Make sure you have npm installed properly by observing the output of <code>npm -v</code>.</li>
+<li>if you got <code>bash: npm: command not found</code>, then you have to install npm first<ul>
+<li><code>sudo apt-get install -y npm</code></li>
+</ul>
+</li>
+<li>Make sure you have node installed properly by observing the output of <code>node -v</code>.</li>
 <li>If your version is below 4.2, then you should update node:<pre><code>$ sudo npm cache clean -f
 $ sudo npm install -g n
 $ sudo n stable
