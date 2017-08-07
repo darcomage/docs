@@ -54,7 +54,10 @@ is currently our main source of information; that will slowly be migrated here.
 
 
 5. NodeJS should come pre-installed, but Raspbian's built-in version is very old.
-    * Make sure you have node and npm installed properly by observing the output of `node -v` and `npm -v`.
+    * Make sure you have npm installed properly by observing the output of `npm -v`.
+    * if you got `bash: npm: command not found`, then you have to install npm first
+        * `sudo apt-get install -y npm`
+    * Make sure you have node installed properly by observing the output of `node -v`.
     * If your version is below 4.2, then you should update node:
 
             $ sudo npm cache clean -f
